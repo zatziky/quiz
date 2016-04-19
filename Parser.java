@@ -5,7 +5,8 @@ import java.io.IOException;
 
 /**
  * This class is thread safe.
- *
+ * <p>
+ * TODO - Better documentation for the class
  */
 public class Parser {
 
@@ -15,10 +16,12 @@ public class Parser {
         this.file = file;
     }
 
+    // TODO document public method
     public synchronized File getFile() {
         return this.file;
     }
 
+    // TODO document public method
     public String getContent() throws IOException {
         FileInputStream inputStream = new FileInputStream(this.file);
         String output = "";
@@ -29,6 +32,7 @@ public class Parser {
         return output;
     }
 
+    // TODO document public method
     public String getContentWithoutUnicode() throws IOException {
         FileInputStream inputStream = new FileInputStream(this.file);
         String output = "";
@@ -41,6 +45,7 @@ public class Parser {
         return output;
     }
 
+    // TODO document public method
     public void saveContent(String content) throws IOException {
         FileOutputStream outputStream = new FileOutputStream(this.file);
         for (int i = 0; i < content.length(); i += 1) {
